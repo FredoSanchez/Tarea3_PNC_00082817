@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>FredyBook</title>
+</head>
+<body>
+	<h1>Ingresar alumno</h1>
+
+	<form action="#" th:action="@{/formData}" th:object="${student}" method="post">
+		<label>Nombre: </label><input type="text" th:field="*{nombre}"><br>
+		<label>Apellidos: </label><input type="text" th:field="*{apellidos}"><br>
+		<label>Fecha de nacimiento: </label><input type="text" th:field="*{fechaNacimiento}"><br>
+		<label>Lugar de nacimiento: </label><input type="text" th:field="*{lugarNacimiento}"><br>
+		<label>Procedencia: </label><input type="text" th:field="*{procedencia}"><br>
+		<label>Numero de telefono: </label><input type="text" th:field="*{telefono}"><br>
+		<label>Numero de telefono móvil: </label><input type="text" th:field="*{movil}">
+		
+		<input type="submit" value="Enviar">
+	</form>
+</body>
+</html>

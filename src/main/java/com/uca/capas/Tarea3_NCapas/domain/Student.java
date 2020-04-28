@@ -10,6 +10,20 @@ public class Student {
 	private	String movil;
 	
 	
+	
+	
+	public Student(String nombre, String apellidos, String fechaNacimiento, String lugarNacimiento, String procedencia,
+			String telefono, String movil) {
+		super();
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
+		this.lugarNacimiento = lugarNacimiento;
+		this.procedencia = procedencia;
+		this.telefono = telefono;
+		this.movil = movil;
+	}
+	
 	public String getNombre() {
 		return nombre;
 	}
