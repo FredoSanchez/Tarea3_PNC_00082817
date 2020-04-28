@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Tienes errores</h1>
+	<form	method="post" th:action="@{/dataForm}" th:object="${student}">
+	 	<ul th:if="${#fields.hasErrors('*')}">
+			<li th:each="err : ${#fields.errors('*')}" th:text="${err}" th:class="error" style="color: #FF0000">Input is incorrect</li>
+	  	</ul>
+	</form>
+</body>
+</html>

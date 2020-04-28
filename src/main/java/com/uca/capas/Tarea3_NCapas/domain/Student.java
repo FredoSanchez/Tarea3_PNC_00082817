@@ -1,12 +1,27 @@
 package com.uca.capas.Tarea3_NCapas.domain;
 
+import javax.validation.constraints.Size;
+
 public class Student {
+	@Size(min = 1, max = 25, message ="Nombre debe contener minimo 1 carácter y máximo 25 caracteres")
 	private	String nombre;
+	
+	@Size(min = 1, max = 25, message ="Apellidos deben contener minimo 1 carácter y máximo 25 caracteres")
 	private	String apellidos;
+	
+	
 	private	String fechaNacimiento;
+	
+	@Size(min = 1, max = 25, message ="El lugar de nacimiento  debe contener minimo 1 carácter y máximo 25 caracteres")
 	private	String lugarNacimiento;
+	
+	@Size(min = 1, max = 100, message ="El lugar de procedencia  debe contener minimo 1 carácter y máximo 100 caracteres")
 	private	String procedencia;
+	
+	@Size(min = 8, max = 8, message ="El numero de telefono fijo debe contener exactamente 8 caracteres")
 	private	String telefono;
+
+	@Size(min = 8, max = 8, message ="El numero de telefono movil debe contener exactamente 8 caracteres")
 	private	String movil;
 	
 	

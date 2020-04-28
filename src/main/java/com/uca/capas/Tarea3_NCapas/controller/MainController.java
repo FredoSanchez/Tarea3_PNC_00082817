@@ -1,7 +1,11 @@
 package com.uca.capas.Tarea3_NCapas.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,11 +19,18 @@ public class MainController {
 		return "ingreso";
 	}
 	
+	
+	
 	@PostMapping("/formData")
-	public ModelAndView procesar(Student student) {
+	public ModelAndView procesar(@Valid @ModelAttribute Student student, BindingResult result) {
 		ModelAndView mav = new ModelAndView();
-		mav.setViewName("correcto");
-		mav.addObject("student", student);
+		
+		if(result.hasErrors()) {
+			mav.setViewName("incorrecto");
+		}else {
+			mav.setViewName("correcto");
+			mav.addObject("student", student);
+		}		
 		
 		return mav;
 	}
